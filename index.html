@@ -3,12 +3,32 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Documento sin título</title>
+<style>
+.rotacion{
+	transform:rotate(180deg);
+}
+.rotacionoperacion{
+	transform:rotate(180deg);
+	-webkit-transform: rotate(180deg);
+}
+.cuerpo{
+	margin:0 auto;}
+
+.centrado{
+	width:25%;
+	margin: 0 auto;
+}
+</style>
 </head>
 
 <body>
 
+<div class="cuerpo">
+
 <script type="text/javascript">
 
+var pres=Math.floor((Math.random() * 200) + 1);
+var sres=Math.floor((Math.random() * 200) + 1);
 var uno=Math.floor((Math.random() * 99) + 1);
 var dos=Math.floor((Math.random() * 99) + 1);
 var operacion=Math.floor((Math.random() * 2) + 1);
@@ -21,31 +41,51 @@ if (operacion==1){
 	var resultado = parseInt(uno)-parseInt(dos);
 }
 
-document.write("<label><h2>"+uno+" "+tipooperacion+" "+dos+"</h2></label><br />");
-</script>
-
-
-<script type="text/javascript">
 function correcto(){
 	
 	alert("Resultado Correcto");
+	location.reload(true);
 	
 	}
 var botoncorrecto=Math.floor((Math.random() * 3) + 1);
 
 switch (botoncorrecto){
     case 1: 
-    document.write('<input type="button" value="'+resultado+'" onclick="correcto();" />&nbsp;&nbsp;&nbsp;<input type="button" value="'+Math.floor((Math.random() * 200) + 1) +'" />&nbsp;&nbsp;&nbsp;<input type="button" value="'+Math.floor((Math.random() * 200) + 1) +'" />');       
+    document.write('<input class="rotacion" type="button" value="'+resultado+'" onclick="correcto();" />&nbsp;&nbsp;&nbsp;<input type="button" value="'+ pres +'" class="rotacion" />&nbsp;&nbsp;&nbsp;<input class="rotacion" type="button" value="'+sres+'" />');       
        break;
     case 2: 
-    document.write('<input type="button" value="'+Math.floor((Math.random() * 200) + 1) +'" />&nbsp;&nbsp;&nbsp;<input type="button" value="'+resultado+'" onclick="correcto();" />&nbsp;&nbsp;&nbsp;<input type="button" value="'+Math.floor((Math.random() * 200) + 1) +'" />');       
+    document.write('<input class="rotacion" type="button" value="'+ pres +'" />&nbsp;&nbsp;&nbsp;<input type="button" value="'+resultado+'" onclick="correcto();" class="rotacion" />&nbsp;&nbsp;&nbsp;<input class="rotacion" type="button" value="'+ sres +'" />');       
        break;
     case 3: 
-	document.write('<input type="button" value="'+Math.floor((Math.random() * 200) + 1) +'" />&nbsp;&nbsp;&nbsp;<input type="button" value="'+Math.floor((Math.random() * 200) + 1) +'" />&nbsp;&nbsp;&nbsp;<input type="button" value="'+resultado+'" onclick="correcto();" />');       
+	document.write('<input class="rotacion" type="button" value="'+ pres +'" />&nbsp;&nbsp;&nbsp;<input type="button" value="'+ sres +'" class="rotacion" />&nbsp;&nbsp;&nbsp;<input type="button" value="'+resultado+'" onclick="correcto();" class="rotacion" />');       
+       break;
+}
+
+
+
+document.write("<label ><h2 class='rotacionoperacion centrado'>"+uno+" "+tipooperacion+" "+dos+"</h2></label><br />");
+document.write("<label ><h2 class='centrado'>"+uno+" "+tipooperacion+" "+dos+"</h2></label><br />");
+</script>
+
+
+<script type="text/javascript">
+
+
+switch (botoncorrecto){
+    case 1: 
+    document.write('<input type="button" value="'+resultado+'" onclick="correcto();" />&nbsp;&nbsp;&nbsp;<input type="button" value="'+ pres +'"  />&nbsp;&nbsp;&nbsp;<input  type="button" value="'+sres+'" />');             
+       break;
+    case 2: 
+    document.write('<input  type="button" value="'+ pres +'" />&nbsp;&nbsp;&nbsp;<input type="button" value="'+resultado+'" onclick="correcto();"  />&nbsp;&nbsp;&nbsp;<input  type="button" value="'+ sres +'" />');       
+       break;
+    case 3: 
+	document.write('<input  type="button" value="'+ pres +'" />&nbsp;&nbsp;&nbsp;<input type="button" value="'+ sres +'"  />&nbsp;&nbsp;&nbsp;<input type="button" value="'+resultado+'" onclick="correcto();"  />');         
        break;
 }
 
 </script>
 
+
+</div>
 </body>
 </html>
