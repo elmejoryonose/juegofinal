@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Documento sin título</title>
+</head>
+
+<body>
+
+<script type="text/javascript">
+
+var uno=Math.floor((Math.random() * 99) + 1);
+var dos=Math.floor((Math.random() * 99) + 1);
+var operacion=Math.floor((Math.random() * 2) + 1);
+
+if (operacion==1){
+	var tipooperacion="+";
+	var resultado = parseInt(uno)+parseInt(dos);
+}else{
+	var tipooperacion="-";
+	var resultado = parseInt(uno)-parseInt(dos);
+}
+
+document.write("<label><h2>"+uno+" "+tipooperacion+" "+dos+"</h2></label><br />");
+</script>
+
+
+<script type="text/javascript">
+function correcto(){
+	
+	alert("Resultado Correcto");
+	
+	}
+var botoncorrecto=Math.floor((Math.random() * 3) + 1);
+
+switch (botoncorrecto){
+    case 1: 
+    document.write('<input type="button" value="'+resultado+'" onclick="correcto();" />&nbsp;&nbsp;&nbsp;<input type="button" value="'+Math.floor((Math.random() * 200) + 1) +'" />&nbsp;&nbsp;&nbsp;<input type="button" value="'+Math.floor((Math.random() * 200) + 1) +'" />');       
+       break;
+    case 2: 
+    document.write('<input type="button" value="'+Math.floor((Math.random() * 200) + 1) +'" />&nbsp;&nbsp;&nbsp;<input type="button" value="'+resultado+'" onclick="correcto();" />&nbsp;&nbsp;&nbsp;<input type="button" value="'+Math.floor((Math.random() * 200) + 1) +'" />');       
+       break;
+    case 3: 
+	document.write('<input type="button" value="'+Math.floor((Math.random() * 200) + 1) +'" />&nbsp;&nbsp;&nbsp;<input type="button" value="'+Math.floor((Math.random() * 200) + 1) +'" />&nbsp;&nbsp;&nbsp;<input type="button" value="'+resultado+'" onclick="correcto();" />');       
+       break;
+}
+
+</script>
+
+</body>
+</html>
